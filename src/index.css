@@ -12,7 +12,7 @@
   font-family: "PP Neue Montreal";
   src: url("./assets/fonts/ppneuemontreal-medium.woff2") format("woff2");
   font-weight: 500;
-  font-style: normal;
+  font-style: medium;
   font-display: swap;
 }
 
@@ -20,16 +20,38 @@
   font-family: "PP Neue Montreal";
   src: url("./assets/fonts/ppneuemontreal-bold.woff2") format("woff2");
   font-weight: 700;
-  font-style: normal;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/HelveticaNeueBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: bold;
   font-display: swap;
 }
 
 @layer base {
   :root {
     --font-sans: "PP Neue Montreal", system-ui, sans-serif;
+    --font-display: "Helvetica Neue", system-ui, sans-serif;
   }
 
   body {
     @apply font-sans bg-black text-white;
   }
+}
+
+@keyframes drawBorder {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-border {
+  animation: drawBorder 2s ease-in-out forwards;
 }
