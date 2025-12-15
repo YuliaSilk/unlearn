@@ -1,4 +1,6 @@
+import {useBgParallax} from "../../hooks/useBgParallax";
 export default function BgDataSVG() {
+ useBgParallax();
  return (
   <svg
    xmlns="http://www.w3.org/2000/svg"
@@ -33,12 +35,14 @@ export default function BgDataSVG() {
     <g
      filter="url(#C)"
      className="B E"
+     data-layer="soft"
     >
      <use href="#J" />
     </g>
     <g
      filter="url(#D)"
      className="B E"
+     data-layer="medium"
     >
      <use
       href="#J"
@@ -48,6 +52,7 @@ export default function BgDataSVG() {
     <g
      filter="url(#E)"
      className="B E"
+     data-layer="sharp"
     >
      <use
       href="#J"
@@ -57,6 +62,7 @@ export default function BgDataSVG() {
     <g
      filter="url(#F)"
      className="B"
+     data-layer="violet"
     >
      <use
       href="#K"
@@ -66,6 +72,7 @@ export default function BgDataSVG() {
     <g
      filter="url(#G)"
      className="B"
+     data-layer="violet-soft"
     >
      <use
       href="#K"

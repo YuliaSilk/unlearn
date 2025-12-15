@@ -1,3 +1,5 @@
+import {scrambleText} from "../utils/scrambleText";
+
 const links = ["Solutions", "Technology", "About", "Careers", "Resources", "Contact"];
 
 export default function Navigation() {
@@ -7,6 +9,7 @@ export default function Navigation() {
     {links.map((link) => (
      <li
       key={link}
+      onMouseEnter={(e) => scrambleText(e.currentTarget)}
       className="cursor-pointer hover:text-white transition-colors delay-100"
      >
       {link}

@@ -36,6 +36,17 @@
   :root {
     --font-sans: "PP Neue Montreal", system-ui, sans-serif;
     --font-display: "Helvetica Neue", system-ui, sans-serif;
+    --bg-aurora: linear-gradient(
+      90.92deg,
+      #efebfd 0%,
+      #dbedff 12.13%,
+      #cef3ed 18.75%,
+      #e1ebfe 25.57%,
+      #fefefe 44.17%,
+      #e8e7fd 70.83%,
+      #c9e8fb 82.81%,
+      #c4efd1 100%
+    );
   }
 
   body {
