@@ -1,4 +1,4 @@
-import "./index.css";
+import "./styles/index.css";
 import Header from "./components/layout/Header/Header";
 import HomePage from "./pages/HomePage";
 

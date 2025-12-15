@@ -27,6 +27,15 @@ export default function Hero({
   if (!heroRef.current) return;
 
   const ctx = gsap.context(() => {
+   gsap.set("[data-hero-btn]", {autoAlpha: 0, scale: 0.9});
+
+   const q = gsap.utils.selector(heroRef);
+
+   const bgElements = q("[data-bg] svg");
+   const titleElement = q("[data-hero-title]");
+   const btnElement = q("[data-hero-btn]");
+
+   if (!bgElements.length || !titleElement || !btnElement) return;
    const tl = gsap.timeline({
     defaults: {ease: animationConfig.ease},
    });
@@ -34,7 +43,8 @@ export default function Hero({
    tl
     .from("[data-bg] svg", BG_ANIMATION)
     .from("[data-hero-title]", TITLE_ANIMATION, "-=1.1")
-    .from("[data-hero-btn]", BUTTON_ANIMATION, "-=0.6")
+    .fromTo("[data-hero-btn]", BUTTON_ANIMATION, {scale: 1, autoAlpha: 1, duration: 0.8}, "-=0.6")
+    // .from("[data-hero-btn] button", BUTTON_ANIMATION, "-=0.6")
     .from("[data-hero-arrow]", ARROW_ANIMATION, "-=0.4");
   }, heroRef);
 
@@ -81,12 +91,9 @@ export default function Hero({
    </div>
    <div className="relative z-10 max-w-[80%] md:max-w-4xl lg:max-w-6xl flex flex-col gap-2 place-self-end items-center justify-center mb-11">
     <div className="text-center">
-     <Button
-      data-hero-btn
-      className="relative"
-     >
-      START TODAY!
-     </Button>
+     <div data-hero-btn>
+      <Button className="relative">START TODAY!</Button>
+     </div>
     </div>
     <div className=" w-full lg:w-[800px] flex overflow-hidden ">
      <h1

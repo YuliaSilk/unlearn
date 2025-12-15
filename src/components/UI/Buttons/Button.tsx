@@ -3,7 +3,7 @@ import type {ButtonProps} from "../../../types/button";
 import {useRef} from "react";
 import {gsap} from "gsap";
 
-export default function Button({children, onClick, type = "button", className = ""}: ButtonProps) {
+export default function Button({children, onClick, type = "button", className = "", ...props}: ButtonProps) {
  const textRef = useRef<HTMLSpanElement>(null);
 
  const handleMouseEnter = () => {
@@ -28,6 +28,7 @@ export default function Button({children, onClick, type = "button", className = 
 
  return (
   <button
+   {...props}
    type={type}
    onClick={onClick}
    onPointerEnter={handleMouseEnter}
