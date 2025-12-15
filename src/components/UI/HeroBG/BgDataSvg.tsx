@@ -1,4 +1,4 @@
-import {useBgParallax} from "../../hooks/useBgParallax";
+import {useBgParallax} from "../../../hooks/useBgParallax";
 export default function BgDataSVG() {
  useBgParallax();
  return (

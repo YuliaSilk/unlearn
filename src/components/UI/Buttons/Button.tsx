@@ -1,14 +1,7 @@
-import type {ReactNode, MouseEvent} from "react";
 import ButtonSVG from "./ButtonSVG";
+import type {ButtonProps} from "../../../types/button";
 import {useRef} from "react";
 import {gsap} from "gsap";
-
-interface ButtonProps {
- children: ReactNode;
- onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
- type?: "button" | "submit" | "reset";
- className?: string;
-}
 
 export default function Button({children, onClick, type = "button", className = ""}: ButtonProps) {
  const textRef = useRef<HTMLSpanElement>(null);
@@ -37,9 +30,9 @@ export default function Button({children, onClick, type = "button", className = 
   <button
    type={type}
    onClick={onClick}
-   onMouseEnter={handleMouseEnter}
-   onMouseLeave={handleMouseLeave}
-   className={`relative z-11 px-12 py-6 text-lg  font-bold transition-all duration-300 hover:scale-120 hover:var(--bg-aurora) ${className}`}
+   onPointerEnter={handleMouseEnter}
+   onPointerLeave={handleMouseLeave}
+   className={`relative z-11 px-12 py-6 text-lg  font-bold transition-all duration-300 hover:scale-105  ${className}`}
    style={{fontFamily: "var(--font-display)"}}
   >
    <ButtonSVG />

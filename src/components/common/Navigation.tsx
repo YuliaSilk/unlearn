@@ -1,7 +1,5 @@
-import {scrambleText} from "../utils/scrambleText";
-
-const links = ["Solutions", "Technology", "About", "Careers", "Resources", "Contact"];
-
+import {scrambleText} from "../../utils/scrambleText";
+import {links} from "../../constants/links";
 export default function Navigation() {
  return (
   <nav>
