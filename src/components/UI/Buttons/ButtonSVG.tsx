@@ -44,7 +44,7 @@ export default function ButtonSVG() {
      />
      <stop
       offset=".495"
-      stopColor="#fff"
+      stopColor="#161616"
       stopOpacity="0"
      />
      <stop
