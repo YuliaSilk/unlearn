@@ -1,10 +1,11 @@
 import type {
     HeroAnimationConfig,
     BgAnimationParams,
-    TitleAnimationParams,
     ButtonAnimationParams,
     ArrowAnimationParams,
     ParallaxConfig,
+    TitleInitialParams,
+    TitleStaggerParams,
 } from "../types/hero";
   
   export const DEFAULT_ANIMATION_CONFIG: HeroAnimationConfig = {
@@ -20,19 +21,26 @@ import type {
     transformOrigin: "50% 50%",
     
   };
+  export const TITLE_INITIAL_STATE: TitleInitialParams = {
+    yPercent: -100, 
+    autoAlpha: 0, 
+    scale: 1.2, 
+  };
   
-  export const TITLE_ANIMATION: TitleAnimationParams = {
-    y: 120,
-    autoAlpha: 0,
-    duration: 1.8,
+  export const TITLE_STAGGER_ANIMATION: TitleStaggerParams = {
+    yPercent: 0,
+    autoAlpha: 1,
+    scale: 1,
+    duration: 1,
+    ease: "power3.out", 
+    stagger: 0.02, 
   };
   
   export const BUTTON_ANIMATION: ButtonAnimationParams = {
     scale: 0.9,
     autoAlpha: 0,
     duration: 0.8,
-    
-    
+
   };
   
   export const ARROW_ANIMATION: ArrowAnimationParams = {

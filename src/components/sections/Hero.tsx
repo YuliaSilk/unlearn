@@ -10,12 +10,14 @@ import type {HeroProps} from "../../types/hero";
 import {
  DEFAULT_ANIMATION_CONFIG,
  BG_ANIMATION,
- TITLE_ANIMATION,
  BUTTON_ANIMATION,
  ARROW_ANIMATION,
  DEFAULT_PARALLAX_CONFIG,
+ TITLE_INITIAL_STATE,
+ TITLE_STAGGER_ANIMATION,
 } from "../../constants/animations";
 import {calculateParallaxOffset} from "../../utils/parallax";
+import SplitTextForAnimation from "../../utils/splitTextForAnimation";
 
 export default function Hero({
  animationConfig = DEFAULT_ANIMATION_CONFIG,
@@ -32,19 +34,21 @@ export default function Hero({
    const q = gsap.utils.selector(heroRef);
 
    const bgElements = q("[data-bg] svg");
-   const titleElement = q("[data-hero-title]");
+   const titleElement = q("[data-hero-title] .char-split-inner");
    const btnElement = q("[data-hero-btn]");
 
    if (!bgElements.length || !titleElement || !btnElement) return;
+
+   gsap.set(titleElement, TITLE_INITIAL_STATE);
+
    const tl = gsap.timeline({
     defaults: {ease: animationConfig.ease},
    });
 
    tl
     .from("[data-bg] svg", BG_ANIMATION)
-    .from("[data-hero-title]", TITLE_ANIMATION, "-=1.1")
+    .to(titleElement, TITLE_STAGGER_ANIMATION, "-=1.1")
     .fromTo("[data-hero-btn]", BUTTON_ANIMATION, {scale: 1, autoAlpha: 1, duration: 0.8}, "-=0.6")
-    // .from("[data-hero-btn] button", BUTTON_ANIMATION, "-=0.6")
     .from("[data-hero-arrow]", ARROW_ANIMATION, "-=0.4");
   }, heroRef);
 
@@ -95,12 +99,12 @@ export default function Hero({
       <Button className="relative">START TODAY!</Button>
      </div>
     </div>
-    <div className=" w-full lg:w-[800px] flex overflow-hidden ">
+    <div className=" w-full lg:w-[800px] flex overflow-hidden">
      <h1
       data-hero-title
       className="text-3xl md:text-6xl xl:text-[84px] font-medium text-center tracking-tight  leading-snug md:leading-tight"
      >
-      Building the future of medicine with AI
+      <SplitTextForAnimation text="Building the future of medicine with AI" />
      </h1>
     </div>
     <div

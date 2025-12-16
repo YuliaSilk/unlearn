@@ -12,6 +12,24 @@ export interface BgAnimationParams {
   transformOrigin: string;
 }
 
+
+export type TitleInitialParams = {
+    yPercent: number;
+    autoAlpha: number;
+    scale: number;
+  };
+  
+
+  export type TitleStaggerParams = {
+    yPercent: number;
+    autoAlpha: number;
+    scale: number;
+    duration: number;
+    ease: string;
+    stagger: number;
+  };
+
+
 export interface TitleAnimationParams {
   y: number;
   autoAlpha: number;

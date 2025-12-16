@@ -36,7 +36,9 @@ export default function Button({children, onClick, type = "button", className = 
    className={`relative z-11 px-12 py-6 text-lg  font-bold transition-all duration-300 hover:scale-105  ${className}`}
    style={{fontFamily: "var(--font-display)"}}
   >
-   <ButtonSVG />
+   <div className=" inset-0 z-10 ">
+    <ButtonSVG />
+   </div>
    <span
     ref={textRef}
     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 items-center z-20 bg-clip-text text-transparent  transition-all duration-300 "

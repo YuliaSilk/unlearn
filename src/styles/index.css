@@ -66,3 +66,7 @@
 .animate-border {
   animation: drawBorder 2s ease-in-out forwards;
 }
+
+.button-blur-shadow svg {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4)); 
+}
