@@ -1,56 +1,41 @@
 export default function ButtonSVG() {
  return (
   <svg
-   xmlns="http://www.w3.org/2000/svg"
-   //    width="320"
-   //    height="80"
-   width="340"
-   height="100"
+   width="320"
+   height="80"
+   viewBox="0 0 320 80"
    fill="none"
-   viewBox="-10 -10 340 100"
+   xmlns="http://www.w3.org/2000/svg"
   >
    <path
-    fill="#fff"
-    fillOpacity="0.1"
-    stroke="url(#a)"
-    strokeWidth="2"
-    filter="url(#f1)"
-    d="M319 1v62.586L303.586 79H1V16.414L16.414 1H319Z"
+    d="M319 1V63.5859L303.586 79H1V16.4141L16.4141 1H319Z"
+    fill="white"
+    fill-opacity="0.1"
+    stroke="url(#paint0_linear_1_350)"
+    stroke-width="2"
    />
    <defs>
-    <filter
-     id="f1"
-     x="-50%"
-     y="-50%"
-     width="200%"
-     height="200%"
-    >
-     <feGaussianBlur
-      in="SourceGraphic"
-      stdDeviation="0.5"
-     />
-    </filter>
     <linearGradient
-     id="a"
+     id="paint0_linear_1_350"
      x1="0"
-     x2="321.695"
      y1="0"
-     y2="7.525"
+     x2="321.695"
+     y2="7.52478"
      gradientUnits="userSpaceOnUse"
     >
      <stop
-      stopColor="#fff"
-      stopOpacity=".2"
+      stop-color="white"
+      stop-opacity="0.2"
      />
      <stop
-      offset=".495"
-      stopColor="#161616"
-      stopOpacity="0"
+      offset="0.494792"
+      stop-color="white"
+      stop-opacity="0"
      />
      <stop
       offset="1"
-      stopColor="#fff"
-      stopOpacity=".2"
+      stop-color="white"
+      stop-opacity="0.2"
      />
     </linearGradient>
    </defs>
